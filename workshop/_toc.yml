@@ -5,3 +5,5 @@ chapters:
 - file: prerequisites
   sections:
     - file: prerequisites/intro_to_shell 
+    - file: prerequisites/github.ipynb
+    - file: prerequisites/excercise_intro_git.ipynb
