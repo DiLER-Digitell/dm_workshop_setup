@@ -8,6 +8,12 @@ We'll come to actual installation instructions shortly, but there are a few othe
 ## Required software
 
 - A command-line shell: Bash
+- Git and Git-Annex
+- a GitHub Account
+- A GIN-Account
+- DataLad
+
+additionally, you'll generally should have:
 - An IDE or text editor: e.g. VSCode (recommended)
 - A modern browser
 
@@ -19,8 +25,8 @@ There are a few computing requirements for the course that are necessary:
 
 1. You must have administrator access to your computer (i.e., you must be able to install things yourself without requesting IT approval).
 2. You should have at least `20 GB` of free disk space on your computer (but we would recommend more, to be safe).
-3. If you are using Windows you must be using Windows 10/11; Windows 7 and 8 will not be sufficient for this course.
-4. Some parts of this course will make use of GitHub, so creating a GitHub account is recommended
+3. If you are using Windows you must be using Windows 10/11; Windows 7 and 8 will not be sufficient for this workshop.
+4. Some parts of this workshop will make use of GitHub, so creating a GitHub account is recommended
 5. For easier communication, we've created a Discord Server for this program. If you're interested install Discord and follow this [invite link](https://discord.gg/ehN5haXS).
 
 If you foresee any of these being a problem please reach out to one of the instructors to see what steps you can take to ensure you are ready for the course start.
@@ -57,9 +63,9 @@ Windows doesn't come with a preinstalled bash shell. To remedy this we will rely
 5. Make sure that Ubuntu is up-to-date by entering the following and hitting enter: `sudo apt update && sudo apt upgrade`
    - here you'll be asked for the password you set in the previous step
 
-From this point on whenever the instructions specify to "open a terminal" please assume you are supposed to open the Ubuntu application.
+*From this point on whenever the instructions specify to "open a terminal" please assume you are supposed to open the Ubuntu application.*
 
-`Important!` This will create a virtual Ubuntu application on your system. The terminal will alwyays start in your Ubuntu home directory, to access your Windows file system you'll have to use a path that should look something like this `/mnt/c/Users/yourusername`, where yourusername is your windows user name. If you're unsure how to navigate through your Ubuntu file system via the terminal, check back with our chapter on [prerequisites/bash](link here).
+`Important!` This will create a virtual Ubuntu application on your system. The *terminal* will alwyays start in your Ubuntu home directory, to access your Windows file system you'll have to use a path that should look something like this `/mnt/c/Users/yourusername`, where yourusername is your windows user name. If you're unsure how to navigate through your Ubuntu file system via the terminal, check back with our chapter on [prerequisites/bash](link here).
 
 **VSCode**
 
@@ -75,23 +81,56 @@ From this point on whenever the instructions specify to "open a terminal" please
 
 ![remote connection wsl taskbar options](/static/VSCode_WSL.png)
 
-**Docker**
+**Git and Git Annex**
+Unfortunately, Windows also doesn't provide a Git instalation out of the box. There are a dew ways to set your windows system up to work with version control systems, but efficency may suffer, when forcing to make Git work with a general windows installation. 
 
-Unfortunately, getting Docker to work on Windows is a tad more complicated. 
+Good news, though! WSL provides you with a Unix-environment, which most likely already ships with an up to date Git installation. To verify wether this is through for your system open the *Ubuntu application*, aka your 'terminal' or 'command-line-interface'. Type: `git --version` and hit enter. The output should simply be a sensible version number, e.g.
 
-   1. Download the installer from this [website](https://www.docker.com/products/docker-desktop/). 
-   2. Double-click Docker Desktop Installer.exe to run the installer. By default, Docker Desktop is installed at C:\Program Files\Docker\Docker. 
-   3. When prompted, ensure that "Use WSL 2" instead of Hyper-V option on the Configuration page is selected. 
-   4. If your system only supports one of the two options, you will not be able to select which backend to use. 
-   5. Follow the instructions on the installation wizard to authorize the installer and proceed with the install. 
-   6. When the installation is successful, select Close to complete the installation process. 
-   7. Open Docker Dektop, agree to the the terms of service and login using your Dockerhub user credentials. Now, the Docker engine should start (if starting of the Docker engine takes more than 5 minutes, restart your computer.
+```{code} bash
+(base) Michaels-MacBook-Pro:~ me$ git --version
+   git version 2.39.2 
+```
 
-`If your admin account is different to your user account, you must add the user to the docker-users group:`
+Should you see no output, an error message or a version number starting with a `1.`, you will have to install or update you Git installation. We will make use of the linux package manager [apt]() for this, Still in the `terminal` type the following and hit enter,
 
-   8. Run `Computer Management` as `administrator`. 
-   9. Navigate to Local Users and Groups > Groups > docker-users. 
-   10. Right-click to add the user to the group. 4)Sign out and sign back in for the changes to take effect.
+`sudo apt-get install git`
+
+After the installation process is completed, you will want to connect your local Git version to the online version-control system GitHub, to make use of the full functionalilty of Git. For this, first create an account on [GitHub]() and type the following in your terminal, replacing the highlighted text with the information you provided on GitHub:
+
+git config --global user.name <Your Name>
+git config --global user.email <youremail@domain.com>
+
+Verify that your data is correct by running the same command again, but omitting the email-input:
+$ git config --global user.email
+
+Should you want to change or override this information, simply run the above commands again, providing your corrected email.
+
+Additionally, we will want to make use of Git Annex, a version control and data managment system. Input the following into your terminal:
+`sudo apt-get install git-annex`
+
+For more information and troubleshooting, you can check the following ressources:
+[Getting started with Git (Microsoft)](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git)
+[Setting your commit email addres ](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git)
+
+
+** DataLad**
+
+Our friendly all-purpose data managemnt software. Learning Datalad will make your life (professional) much easier, so we highly encourage not only following our workshop,but having a look at the masterpiece that is the [Datalad Handbook](). They also provide a a [OS-specific installation guide](https://handbook.datalad.org/en/latest/intro/installation.html#fom-macosx-pip), but we will be changing this process up a little not only using the python package manager [pip]([venv](https://docs.python.org/3/library/venv.html)) that all of you already have preinstalled with your OS (your Ubuntu app created with WSL in the case of Windows kids), and the provided `enviornment managemnt package` [venv](https://docs.python.org/3/library/venv.html). 
+
+But before we copy and paste the following code block into your terminal, let's look at what it actually does
+1. `python -m venv --system-site-packages ~/env/datalad` creates a virtual environment in the directory ~/env/datalad and ensures access to globally installed Python packages
+2. `source ~/env/datalad/bin/activate` activates the virtual environment you just created, isolating your terminal session for your Datalad-related work from your baseline environment
+3. `python -m pip install datalad` now installs the datalad package into your isolated virtual environment using the Python package manager, pip.
+4. same thing, just for the datalad-container extension, which allows you to manage and run automated pipelines (Docker or singularity container) on your data
+
+
+ python -m venv --system-site-packages ~/env/datalad && source ~/env/datalad/bin/activate;
+    python -m pip install datalad
+    python -m pip install datalad-container
+
+*Note:*
+From now on, whenever you want to work with Datalad, activate the virtual environment in your terminal with:
+`source ~/env/datalad/bin/activate`
 
 ```
 
@@ -122,25 +161,50 @@ Open a terminal and type `echo $SHELL`.
 1. Go to https://code.visualstudio.com/ and click the download button for either the .deb (Ubuntu, Debian) or the .rpm (Fedora, CentOS) file.
 1. Double-click the downloaded file to install VSCode.
 
-**Docker**
 
-Installing Docker Desktop is the recommended approach for all systems. You'll need administraror (sudo) rights to follow this process.
+**Git and Git-Annex**
+Should also be pre-installed! To verify run the followin command in your terminal
 
-1. Install Docker Desktop by following the official [installation guide](https://docs.docker.com/desktop/install/linux-install/) for your specific distro.
+git --version
 
-   1. Set up Docker's package repository. See `step one` of [Install using the apt repository](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository).
-   2. Download latest package
-   3. Open a terminal and install the package with apt following the instructions on the website
+Should you see no output, an error message or a version number starting with a `1.`, you will have to install or update you Git installation. We will make use of the linux package manager [apt]() for this, Still in the `terminal` type the following and hit enter,
 
-2. To Launch Docker Desktop run:
-      `systemctl --user start docker-desktop``
+`sudo apt-get install git`
 
-   - alternatively to enable Docker Desktop to start at sign-in run:
-      `systemctl --user enable docker-desktop`
+After the installation process is completed, you will want to connect your local Git version to the online version-control system GitHub, to make use of the full functionalilty of Git. For this, first create an account on [GitHub]() and type the following in your terminal, replacing the highlighted text with the information you provided on GitHub:
 
-3. Close and Re-open a new terminal and type 
-   `docker run hello-world`.
-   A brief introductory message should be printed to the screen.
+git config --global user.name <Your Name>
+git config --global user.email <youremail@domain.com>
+
+Verify that your data is correct by running the same command again, but omitting the email-input:
+$ git config --global user.email
+
+Should you want to change or override this information, simply run the above commands again, providing your corrected email.
+
+Additionally, we will want to make use of Git Annex, a version control and data managment system. Input the following into your terminal:
+`sudo apt-get install git-annex`
+
+
+
+** DataLad**
+
+Our friendly all-purpose data managemnt software. Learning Datalad will make your life (professional) much easier, so we highly encourage not only following our workshop,but having a look at the masterpiece that is the [Datalad Handbook](). They also provide a a [OS-specific installation guide](https://handbook.datalad.org/en/latest/intro/installation.html#fom-macosx-pip), but we will be changing this process up a little not only using the python package manager [pip]([venv](https://docs.python.org/3/library/venv.html)) that all of you already have preinstalled with your OS (WSL in the case of Windows kids), and the provided `enviornment managemnt package` [venv](https://docs.python.org/3/library/venv.html). 
+
+But before we copy and paste the following code block into your terminal, let's look at what it actually does
+1. `python -m venv --system-site-packages ~/env/datalad` creates a virtual environment in the directory ~/env/datalad and ensures access to globally installed Python packages
+2. `source ~/env/datalad/bin/activate` activates the virtual environment you just created, isolating your terminal session for your Datalad-related work from your baseline environment
+3. `python -m pip install datalad` now installs the datalad package into your isolated virtual environment using the Python package manager, pip.
+4. same thing, just for the datalad-container extension, which allows you to manage and run automated pipelines (Docker or singularity container) on your data
+
+
+ python -m venv --system-site-packages ~/env/datalad && source ~/env/datalad/bin/activate;
+    python -m pip install datalad
+    python -m pip install datalad-container
+
+*Note:*
+From now on, whenever you want to work with Datalad, activate the virtual environment in your terminal with:
+`source ~/env/datalad/bin/activate`
+
 ```
 
 ```{tab-item} MacOs
@@ -163,18 +227,53 @@ Newer versions of Mac OS will rely on a differnt standard, i.e. `zsh`, so we mig
 1. Go to https://code.visualstudio.com/ and click the download button.
 2. Unzip the downloaded file (e.g., `VSCode-darwin-stable.zip`) and moving the resulting `Visual Studio Code` file to your Applications directory.
 
-**Docker**
+**Git and Git-Annex**
+Unlike other Unix-systems MacOs sadly doesn't usually provide a Git installation straight out of the box. So we'll first have to install a package manager that allows us the installation of programms via the terminal. 
 
-1. Go to https://hub.docker.com/editions/community/docker-ce-desktop-mac/ and press “Get Docker”.
-2. Open the “Docker.dmg” file that is downloaded and drag and drop the icon to the Applications folder
-3. Open the Docker application and enter your password.
-   An icon will appear in the status bar in the top-left of the screen.
-   Wait until it reads “Docker Desktop is now up and running!”
-4. Open a new terminal and type `docker run hello-world`.
-   A brief introductory message should be printed to the screen.
+Head to the following site and simply cope-paste the highlighted bash code: [Homebrew](https://brew.sh/)
+It should look something like, this:
 
-(The above step-by-step Docker instructions are distilled from [here](https://docs.docker.com/docker-for-mac/install/).
-If you have questions during the installation procedure please check that link for potential answers!)
+`/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)`
+
+The output of the script will explain exactly what it does and ask for your confirmation at every relevant step. 
+
+Once this is done, still in your terminal, input the following command:
+
+`brew install git`
+
+Additionally, we will want to make use of Git Annex, a version control and data managment system. Input the following into your terminal:
+`brew install git-annex`
+
+
+After the installation process is completed, you will want to connect your local Git version to the online version-control system GitHub, to make use of the full functionalilty of Git. For this, first create an account on [GitHub]() and type the following in your terminal, replacing the highlighted text with the information you provided on GitHub:
+
+git config --global user.name <Your Name>
+git config --global user.email <youremail@domain.com>
+
+Verify that your data is correct by running the same command again, but omitting the email-input:
+$ git config --global user.email
+
+Should you want to change or override this information, simply run the above commands again, providing your corrected email.
+
+
+** DataLad**
+
+Our friendly all-purpose data managemnt software. Learning Datalad will make your life (professional) much easier, so we highly encourage not only following our workshop,but having a look at the masterpiece that is the [Datalad Handbook](). They also provide a a [OS-specific installation guide](https://handbook.datalad.org/en/latest/intro/installation.html#fom-macosx-pip), but we will be changing this process up a little not only using the python package manager [pip]([venv](https://docs.python.org/3/library/venv.html)) that all of you already have preinstalled with your OS (WSL in the case of Windows kids), and the provided `enviornment managemnt package` [venv](https://docs.python.org/3/library/venv.html). 
+
+But before we copy and paste the following code block into your terminal, let's look at what it actually does
+1. `python -m venv --system-site-packages ~/env/datalad` creates a virtual environment in the directory ~/env/datalad and ensures access to globally installed Python packages
+2. `source ~/env/datalad/bin/activate` activates the virtual environment you just created, isolating your terminal session for your Datalad-related work from your baseline environment
+3. `python -m pip install datalad` now installs the datalad package into your isolated virtual environment using the Python package manager, pip.
+4. same thing, just for the datalad-container extension, which allows you to manage and run automated pipelines (Docker or singularity container) on your data
+
+
+ python -m venv --system-site-packages ~/env/datalad && source ~/env/datalad/bin/activate;
+    python -m pip install datalad
+    python -m pip install datalad-container
+
+*Note:*
+From now on, whenever you want to work with Datalad, activate the virtual environment in your terminal with:
+`source ~/env/datalad/bin/activate`
 ```
 
 ````
