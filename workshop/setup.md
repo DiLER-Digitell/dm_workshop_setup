@@ -103,8 +103,8 @@ Unfortunately, Windows also doesn't provide a Git instalation out of the box. Th
 
 Good news, though! WSL provides you with a Unix-environment, which most likely already ships with an up to date Git installation. To verify wether this is through for your system open the *Ubuntu application*, aka your 'terminal' or 'command-line-interface'. Type: `git --version` and hit enter. The output should simply be a sensible version number, e.g.
 
-git --version
-   git version 2.39.2 
+`git --version`
+   `git version 2.39.2 `
 
 
 Should you see no output, an error message or a version number starting with a `1.`, you will have to install or update you Git installation. We will make use of the linux package manager [apt]() for this, Still in the `terminal` type the following and hit enter,
@@ -113,15 +113,19 @@ Should you see no output, an error message or a version number starting with a `
 
 After the installation process is completed, you will want to connect your local Git version to the online version-control system GitHub, to make use of the full functionalilty of Git. For this, first create an account on [GitHub]() and type the following in your terminal, replacing the highlighted text with the information you provided on GitHub:
 
-git config --global user.name <Your Name>
-git config --global user.email <youremail@domain.com>
+`git config --global user.name <Your Name>`
+
+`git config --global user.email <youremail@domain.com>`
 
 Verify that your data is correct by running the same command again, but omitting the email-input:
-$ git config --global user.email
+
+`git config --global user.email`
+
 
 Should you want to change or override this information, simply run the above commands again, providing your corrected email.
 
 Additionally, we will want to make use of Git Annex, a version control and data managment system. Input the following into your terminal:
+
 `sudo apt-get install git-annex`
 
 For more information and troubleshooting, you can check the following ressources:
@@ -142,13 +146,13 @@ But before we copy and paste the following code block into your terminal, let's 
 3. `python -m pip install datalad` now installs the datalad package into your isolated virtual environment using the Python package manager, pip.
 4. same thing, just for the datalad-container extension, which allows you to manage and run automated pipelines (Docker or singularity container) on your data
 
-
- python -m venv --system-site-packages ~/env/datalad && source ~/env/datalad/bin/activate;
-    python -m pip install datalad
-    python -m pip install datalad-container
+         python -m venv --system-site-packages ~/env/datalad && source ~/env/datalad/bin/activate;
+         python -m pip install datalad
+         python -m pip install datalad-container
 
 *Note:*
 From now on, whenever you want to work with Datalad, activate the virtual environment in your terminal with:
+
 `source ~/env/datalad/bin/activate`
 
 <br>
@@ -219,7 +223,7 @@ It is a good idea to associate this with your university e-mail (if you have one
 **Git and Git-Annex**
 Should also be pre-installed! To verify run the followin command in your terminal
 
-git --version
+`git --version`
 
 Should you see no output, an error message or a version number starting with a `1.`, you will have to install or update you Git installation. We will make use of the linux package manager [apt]() for this, Still in the `terminal` type the following and hit enter,
 
@@ -227,15 +231,19 @@ Should you see no output, an error message or a version number starting with a `
 
 After the installation process is completed, you will want to connect your local Git version to the online version-control system GitHub, to make use of the full functionalilty of Git. For this, first create an account on [GitHub]() and type the following in your terminal, replacing the highlighted text with the information you provided on GitHub:
 
-git config --global user.name <Your Name>
-git config --global user.email <youremail@domain.com>
+`git config --global user.name <Your Name>`
+
+`git config --global user.email <youremail@domain.com>`
 
 Verify that your data is correct by running the same command again, but omitting the email-input:
-$ git config --global user.email
+
+`git config --global user.email`
+
 
 Should you want to change or override this information, simply run the above commands again, providing your corrected email.
 
 Additionally, we will want to make use of Git Annex, a version control and data managment system. Input the following into your terminal:
+
 `sudo apt-get install git-annex`
 
 <br>
@@ -253,12 +261,13 @@ But before we copy and paste the following code block into your terminal, let's 
 4. same thing, just for the datalad-container extension, which allows you to manage and run automated pipelines (Docker or singularity container) on your data
 
 
- python -m venv --system-site-packages ~/env/datalad && source ~/env/datalad/bin/activate;
-    python -m pip install datalad
-    python -m pip install datalad-container
+         python -m venv --system-site-packages ~/env/datalad && source ~/env/datalad/bin/activate;
+         python -m pip install datalad
+         python -m pip install datalad-container
 
 *Note:*
 From now on, whenever you want to work with Datalad, activate the virtual environment in your terminal with:
+
 `source ~/env/datalad/bin/activate`
 
 <br>
@@ -333,16 +342,19 @@ Once this is done, still in your terminal, input the following command:
 `brew install git`
 
 Additionally, we will want to make use of Git Annex, a version control and data managment system. Input the following into your terminal:
+
 `brew install git-annex`
 
 
 After the installation process is completed, you will want to connect your local Git version to the online version-control system GitHub, to make use of the full functionalilty of Git. For this, first create an account on [GitHub]() and type the following in your terminal, replacing the highlighted text with the information you provided on GitHub:
 
-git config --global user.name <Your Name>
-git config --global user.email <youremail@domain.com>
+`git config --global user.name <Your Name>`
+
+`git config --global user.email <youremail@domain.com>`
 
 Verify that your data is correct by running the same command again, but omitting the email-input:
-$ git config --global user.email
+
+`git config --global user.email`
 
 Should you want to change or override this information, simply run the above commands again, providing your corrected email.
 
@@ -360,14 +372,14 @@ But before we copy and paste the following code block into your terminal, let's 
 3. `python -m pip install datalad` now installs the datalad package into your isolated virtual environment using the Python package manager, pip.
 4. same thing, just for the datalad-container extension, which allows you to manage and run automated pipelines (Docker or singularity container) on your data
 
-````
- python -m venv --system-site-packages ~/env/datalad && source ~/env/datalad/bin/activate;
-    python -m pip install datalad
-    python -m pip install datalad-container
-````
+         python -m venv --system-site-packages ~/env/datalad && source ~/env/datalad/bin/activate;
+         python -m pip install datalad
+         python -m pip install datalad-container
+
 
 *Note:*
 From now on, whenever you want to work with Datalad, activate the virtual environment in your terminal with:
+
 `source ~/env/datalad/bin/activate`
 
 <br>
