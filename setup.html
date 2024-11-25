@@ -479,6 +479,8 @@ Select <code class="docutils literal notranslate"><span class="pre">Yes</span></
 </ol>
 <p><em>From this point on whenever the instructions specify to “open a terminal” please assume you are supposed to open the Ubuntu application.</em></p>
 <p><code class="docutils literal notranslate"><span class="pre">Important!</span></code> This will create a virtual Ubuntu application on your system. The <em>terminal</em> will alwyays start in your Ubuntu home directory, to access your Windows file system you’ll have to use a path that should look something like this <code class="docutils literal notranslate"><span class="pre">/mnt/c/Users/yourusername</span></code>, where yourusername is your windows user name. If you’re unsure how to navigate through your Ubuntu file system via the terminal, check back with our chapter on [prerequisites/bash](link here).</p>
+<br>
+<br>
 <p><strong>VSCode</strong></p>
 <ol class="arabic simple">
 <li><p>Go to <a class="reference external" href="https://code.visualstudio.com/">https://code.visualstudio.com/</a> and click the download button, then run the <code class="docutils literal notranslate"><span class="pre">.exe</span></code> file.</p></li>
@@ -493,6 +495,8 @@ Linux distribution you have installed. VSCode automatically detects WSL distribu
 <p><img alt="remote connection wsl startup screen" src="_images/VSCode_startup.png" /></p>
 <br>
 <p><img alt="remote connection wsl taskbar options" src="_images/VSCode_WSL.png" /></p>
+<br>
+<br>
 <p><strong>GitHub</strong></p>
 <p>Go to <a class="github reference external" href="https://github.com/join/">join/</a> and follow the on-screen instructions to create an account.
 It is a good idea to associate this with your university e-mail (if you have one) as this will entitle you to sign up for the <a class="reference external" href="https://education.github.com/pack">GitHub Student Developer Pack</a> or <a class="reference external" href="https://education.github.com/teachers">GitHub for teachers</a> which come with some nice free bonuses.</p>
@@ -514,6 +518,8 @@ $ git config –global user.email</p>
 <p>For more information and troubleshooting, you can check the following ressources:
 <a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git">Getting started with Git (Microsoft)</a>
 <a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git">Setting your commit email addres </a></p>
+<br>
+<br>
 <p><strong>DataLad</strong></p>
 <p>Our friendly all-purpose data managemnt software. Learning Datalad will make your life (professional) much easier, so we highly encourage not only following our workshop,but having a look at the masterpiece that is the <a class="reference internal" href="#"><span class="xref myst">Datalad Handbook</span></a>. They also provide a a <a class="reference external" href="https://handbook.datalad.org/en/latest/intro/installation.html#fom-macosx-pip">OS-specific installation guide</a>, but we will be changing this process up a little not only using the python package manager <a class="reference internal" href="#%5Bvenv%5D(https://docs.python.org/3/library/venv.html)"><span class="xref myst">pip</span></a> that all of you already have preinstalled with your OS (your Ubuntu app created with WSL in the case of Windows kids), and the provided <code class="docutils literal notranslate"><span class="pre">enviornment</span> <span class="pre">managemnt</span> <span class="pre">package</span></code> <a class="reference external" href="https://docs.python.org/3/library/venv.html">venv</a>.</p>
 <p>But before we copy and paste the following code block into your terminal, let’s look at what it actually does</p>
@@ -529,6 +535,8 @@ python -m pip install datalad-container</p>
 <p><em>Note:</em>
 From now on, whenever you want to work with Datalad, activate the virtual environment in your terminal with:
 <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">~/env/datalad/bin/activate</span></code></p>
+<br>
+<br>
 <p><strong>GIN.g-node interface</strong></p>
 <p>G-Node, or the “German Neuroinformatics Node” interface, provides a GDPR-compliant service for data storage and sharing. It is built on Git and git-annex, allowing easy integration into version-controlled, automated workflows. To begin, you’ll need to set up an account on the <a class="reference external" href="https://gin.g-node.org/">public GIN website</a>.</p>
 <p>If we want to upload files from our local system to GIN and make full use of our setup using Datalad and Git to manage our files, we’ll need to connect these services. This can be done by generating and sharing SSH keys between the services. SSH (Secure Shell Protocol) keys are authentication protocols that allow secure login from a local system to remote servers and services. For example, if you’re working on a local server system, you’ve likely already used SSH.</p>
@@ -566,11 +574,15 @@ If not go through these following steps:</p>
 <li><p>Close and reopen your terminal</p></li>
 <li><p>Verify that you’re now using the bash shell via <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$SHELL</span></code></p></li>
 </ol>
+<br>
+<br>
 <p><strong>VSCode</strong></p>
 <ol class="arabic simple">
 <li><p>Go to <a class="reference external" href="https://code.visualstudio.com/">https://code.visualstudio.com/</a> and click the download button for either the .deb (Ubuntu, Debian) or the .rpm (Fedora, CentOS) file.</p></li>
 <li><p>Double-click the downloaded file to install VSCode.</p></li>
 </ol>
+<br>
+<br>
 <p><strong>GitHub</strong></p>
 <p>Go to <a class="github reference external" href="https://github.com/join/">join/</a> and follow the on-screen instructions to create an account.
 It is a good idea to associate this with your university e-mail (if you have one) as this will entitle you to sign up for the <a class="reference external" href="https://education.github.com/pack">GitHub Student Developer Pack</a> or <a class="reference external" href="https://education.github.com/teachers">GitHub for teachers</a> which come with some nice free bonuses.</p>
@@ -587,6 +599,8 @@ $ git config –global user.email</p>
 <p>Should you want to change or override this information, simply run the above commands again, providing your corrected email.</p>
 <p>Additionally, we will want to make use of Git Annex, a version control and data managment system. Input the following into your terminal:
 <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">git-annex</span></code></p>
+<br>
+<br>
 <p><strong>DataLad</strong></p>
 <p>Our friendly all-purpose data managemnt software. Learning Datalad will make your life (professional) much easier, so we highly encourage not only following our workshop,but having a look at the masterpiece that is the <a class="reference internal" href="#"><span class="xref myst">Datalad Handbook</span></a>. They also provide a a <a class="reference external" href="https://handbook.datalad.org/en/latest/intro/installation.html#fom-macosx-pip">OS-specific installation guide</a>, but we will be changing this process up a little not only using the python package manager <a class="reference internal" href="#%5Bvenv%5D(https://docs.python.org/3/library/venv.html)"><span class="xref myst">pip</span></a> that all of you already have preinstalled with your OS (WSL in the case of Windows kids), and the provided <code class="docutils literal notranslate"><span class="pre">enviornment</span> <span class="pre">managemnt</span> <span class="pre">package</span></code> <a class="reference external" href="https://docs.python.org/3/library/venv.html">venv</a>.</p>
 <p>But before we copy and paste the following code block into your terminal, let’s look at what it actually does</p>
@@ -602,6 +616,8 @@ python -m pip install datalad-container</p>
 <p><em>Note:</em>
 From now on, whenever you want to work with Datalad, activate the virtual environment in your terminal with:
 <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">~/env/datalad/bin/activate</span></code></p>
+<br>
+<br>
 <p><strong>GIN.g-node interface</strong></p>
 <p>G-Node, or the “German Neuroinformatics Node” interface, provides a GDPR-compliant service for data storage and sharing. It is built on Git and git-annex, allowing easy integration into version-controlled, automated workflows. To begin, you’ll need to set up an account on the <a class="reference external" href="https://gin.g-node.org/">public GIN website</a>.</p>
 <p>If we want to upload files from our local system to GIN and make full use of our setup using Datalad and Git to manage our files, we’ll need to connect these services. This can be done by generating and sharing SSH keys between the services. SSH (Secure Shell Protocol) keys are authentication protocols that allow secure login from a local system to remote servers and services. For example, if you’re working on a local server system, you’ve likely already used SSH.</p>
@@ -634,14 +650,20 @@ Newer versions of Mac OS will rely on a differnt standard, i.e. <code class="doc
 <li><p>Close and reopen your terminal</p></li>
 <li><p>Verify that you’re now using the bash shell via <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$SHELL</span></code></p></li>
 </ol>
+<br>
+<br>
 <p><strong>VSCode</strong></p>
 <ol class="arabic simple">
 <li><p>Go to <a class="reference external" href="https://code.visualstudio.com/">https://code.visualstudio.com/</a> and click the download button.</p></li>
 <li><p>Unzip the downloaded file (e.g., <code class="docutils literal notranslate"><span class="pre">VSCode-darwin-stable.zip</span></code>) and moving the resulting <code class="docutils literal notranslate"><span class="pre">Visual</span> <span class="pre">Studio</span> <span class="pre">Code</span></code> file to your Applications directory.</p></li>
 </ol>
+<br>
+<br>
 <p><strong>GitHub</strong></p>
 <p>Go to <a class="github reference external" href="https://github.com/join/">join/</a> and follow the on-screen instructions to create an account.
 It is a good idea to associate this with your university e-mail (if you have one) as this will entitle you to sign up for the <a class="reference external" href="https://education.github.com/pack">GitHub Student Developer Pack</a> or <a class="reference external" href="https://education.github.com/teachers">GitHub for teachers</a> which come with some nice free bonuses.</p>
+<br>
+<br>
 <p><strong>Git and Git-Annex</strong>
 Unlike other Unix-systems MacOs sadly doesn’t usually provide a Git installation straight out of the box. So we’ll first have to install a package manager that allows us the installation of programms via the terminal.</p>
 <p>Head to the following site and simply cope-paste the highlighted bash code: <a class="reference external" href="https://brew.sh/">Homebrew</a>
@@ -658,6 +680,8 @@ git config –global user.email <a class="reference external" href="mailto:youre
 <p>Verify that your data is correct by running the same command again, but omitting the email-input:
 $ git config –global user.email</p>
 <p>Should you want to change or override this information, simply run the above commands again, providing your corrected email.</p>
+<br>
+<br>
 <p><strong>DataLad</strong></p>
 <p>Our friendly all-purpose data managemnt software. Learning Datalad will make your life (professional) much easier, so we highly encourage not only following our workshop,but having a look at the masterpiece that is the <a class="reference internal" href="#"><span class="xref myst">Datalad Handbook</span></a>. They also provide a a <a class="reference external" href="https://handbook.datalad.org/en/latest/intro/installation.html#fom-macosx-pip">OS-specific installation guide</a>, but we will be changing this process up a little not only using the python package manager <a class="reference internal" href="#%5Bvenv%5D(https://docs.python.org/3/library/venv.html)"><span class="xref myst">pip</span></a> that all of you already have preinstalled with your OS (WSL in the case of Windows kids), and the provided <code class="docutils literal notranslate"><span class="pre">enviornment</span> <span class="pre">managemnt</span> <span class="pre">package</span></code> <a class="reference external" href="https://docs.python.org/3/library/venv.html">venv</a>.</p>
 <p>But before we copy and paste the following code block into your terminal, let’s look at what it actually does</p>
@@ -673,6 +697,8 @@ python -m pip install datalad-container</p>
 <p><em>Note:</em>
 From now on, whenever you want to work with Datalad, activate the virtual environment in your terminal with:
 <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">~/env/datalad/bin/activate</span></code></p>
+<br>
+<br>
 <p><strong>GIN.g-node interface</strong></p>
 <p>G-Node, or the “German Neuroinformatics Node” interface, provides a GDPR-compliant service for data storage and sharing. It is built on Git and git-annex, allowing easy integration into version-controlled, automated workflows. To begin, you’ll need to set up an account on the <a class="reference external" href="https://gin.g-node.org/">public GIN website</a>.</p>
 <p>If we want to upload files from our local system to GIN and make full use of our setup using Datalad and Git to manage our files, we’ll need to connect these services. This can be done by generating and sharing SSH keys between the services. SSH (Secure Shell Protocol) keys are authentication protocols that allow secure login from a local system to remote servers and services. For example, if you’re working on a local server system, you’ve likely already used SSH.</p>
