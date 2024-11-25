@@ -66,6 +66,11 @@ Windows doesn't come with a preinstalled bash shell. To remedy this we will rely
 
 `Important!` This will create a virtual Ubuntu application on your system. The *terminal* will alwyays start in your Ubuntu home directory, to access your Windows file system you'll have to use a path that should look something like this `/mnt/c/Users/yourusername`, where yourusername is your windows user name. If you're unsure how to navigate through your Ubuntu file system via the terminal, check back with our chapter on [prerequisites/bash](link here).
 
+
+<br>
+
+<br>
+
 **VSCode**
 
 1. Go to https://code.visualstudio.com/ and click the download button, then run the `.exe` file.
@@ -80,6 +85,9 @@ Windows doesn't come with a preinstalled bash shell. To remedy this we will rely
 
 ![remote connection wsl taskbar options](/static/VSCode_WSL.png)
 
+<br>
+
+<br>
 
 **GitHub**
 
@@ -117,6 +125,9 @@ For more information and troubleshooting, you can check the following ressources
 [Getting started with Git (Microsoft)](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git)
 [Setting your commit email addres ](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git)
 
+<br>
+
+<br>
 
 **DataLad**
 
@@ -136,6 +147,11 @@ But before we copy and paste the following code block into your terminal, let's 
 *Note:*
 From now on, whenever you want to work with Datalad, activate the virtual environment in your terminal with:
 `source ~/env/datalad/bin/activate`
+
+<br>
+
+<br>
+
 
 **GIN.g-node interface**
 
@@ -173,11 +189,19 @@ Open a terminal and type `echo $SHELL`.
    4. Close and reopen your terminal
    5. Verify that you're now using the bash shell via `echo $SHELL`
 
+<br>
+
+<br>
 
 **VSCode**
 
 1. Go to https://code.visualstudio.com/ and click the download button for either the .deb (Ubuntu, Debian) or the .rpm (Fedora, CentOS) file.
 1. Double-click the downloaded file to install VSCode.
+
+<br>
+
+<br>
+
 
 **GitHub**
 
@@ -206,6 +230,9 @@ Should you want to change or override this information, simply run the above com
 Additionally, we will want to make use of Git Annex, a version control and data managment system. Input the following into your terminal:
 `sudo apt-get install git-annex`
 
+<br>
+
+<br>
 
 **DataLad**
 
@@ -225,6 +252,11 @@ But before we copy and paste the following code block into your terminal, let's 
 *Note:*
 From now on, whenever you want to work with Datalad, activate the virtual environment in your terminal with:
 `source ~/env/datalad/bin/activate`
+
+<br>
+
+<br>
+
 
 **GIN.g-node interface**
 
@@ -255,17 +287,28 @@ Newer versions of Mac OS will rely on a differnt standard, i.e. `zsh`, so we mig
 4. Close and reopen your terminal
 5. Verify that you're now using the bash shell via `echo $SHELL`
 
+<br>
+
+<br>
+
+
 **VSCode**
 
 1. Go to https://code.visualstudio.com/ and click the download button.
 2. Unzip the downloaded file (e.g., `VSCode-darwin-stable.zip`) and moving the resulting `Visual Studio Code` file to your Applications directory.
 
+<br>
+
+<br>
 
 **GitHub**
 
 Go to https://github.com/join/ and follow the on-screen instructions to create an account.
 It is a good idea to associate this with your university e-mail (if you have one) as this will entitle you to sign up for the [GitHub Student Developer Pack](https://education.github.com/pack) or [GitHub for teachers](https://education.github.com/teachers) which come with some nice free bonuses.
 
+<br>
+
+<br>
 
 **Git and Git-Annex**
 Unlike other Unix-systems MacOs sadly doesn't usually provide a Git installation straight out of the box. So we'll first have to install a package manager that allows us the installation of programms via the terminal. 
@@ -295,6 +338,9 @@ $ git config --global user.email
 
 Should you want to change or override this information, simply run the above commands again, providing your corrected email.
 
+<br>
+
+<br>
 
 **DataLad**
 
@@ -315,6 +361,10 @@ But before we copy and paste the following code block into your terminal, let's 
 From now on, whenever you want to work with Datalad, activate the virtual environment in your terminal with:
 `source ~/env/datalad/bin/activate`
 
+<br>
+
+<br>
+
 **GIN.g-node interface**
 
 G-Node, or the "German Neuroinformatics Node" interface, provides a GDPR-compliant service for data storage and sharing. It is built on Git and git-annex, allowing easy integration into version-controlled, automated workflows. To begin, you’ll need to set up an account on the [public GIN website](https://gin.g-node.org/). 
@@ -331,6 +381,7 @@ Admittedly, this is a more complex process that we will not have time to cover i
 ```
 
 ````
+
 
 **Note**: If the instructions aren't working and you have spent more than 15-20 minutes troubleshooting on your own, reach out to the instructors or create a pull request for the assoicated [GitHub Repo](https://github.com/DiLER-Digitell/dm_workshop_setup).
 
@@ -359,7 +410,6 @@ However, please let me know if you have a preferred way of interacting with othe
    ```
 4. Input `datalad --version`
    - a datalad version should be displayed
-
 
 
 
