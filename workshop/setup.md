@@ -360,10 +360,11 @@ But before we copy and paste the following code block into your terminal, let's 
 3. `python -m pip install datalad` now installs the datalad package into your isolated virtual environment using the Python package manager, pip.
 4. same thing, just for the datalad-container extension, which allows you to manage and run automated pipelines (Docker or singularity container) on your data
 
-
+````
  python -m venv --system-site-packages ~/env/datalad && source ~/env/datalad/bin/activate;
     python -m pip install datalad
     python -m pip install datalad-container
+````
 
 *Note:*
 From now on, whenever you want to work with Datalad, activate the virtual environment in your terminal with:
