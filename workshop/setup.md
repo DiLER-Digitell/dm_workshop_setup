@@ -15,7 +15,7 @@ We'll come to actual installation instructions shortly, but there are a few othe
 
 additionally, you'll generally should have:
 - An IDE or text editor: e.g. VSCode (recommended)
-- A modern browser
+- A modern browser (Install Firefox or Chrome; Safari will also work.)
 
 Mac and Linux distributions automatically provide a command line shell, simply search for `terminal` and you should be good to go. Windows users will have to complete a few additional steps, see the OS-specific installation instructions down below.
 
@@ -27,7 +27,6 @@ There are a few computing requirements for the course that are necessary:
 2. You should have at least `20 GB` of free disk space on your computer (but we would recommend more, to be safe).
 3. If you are using Windows you must be using Windows 10/11; Windows 7 and 8 will not be sufficient for this workshop.
 4. Some parts of this workshop will make use of GitHub, so creating a GitHub account is recommended
-5. For easier communication, we've created a Discord Server for this program. If you're interested install Discord and follow this [invite link](https://discord.gg/ehN5haXS).
 
 If you foresee any of these being a problem please reach out to one of the instructors to see what steps you can take to ensure you are ready for the course start.
 
@@ -35,7 +34,7 @@ If you foresee any of these being a problem please reach out to one of the instr
 
 - If you already have some of these things installed on your computer that should (theoretically) be okay.
   However, you need to make sure that you can complete the steps described in `checking your install` section below without issue.
-  - This is mainly to see if your Docker installation is working!
+
 
 ## OS-specific installation instructions
 
@@ -84,7 +83,8 @@ Windows doesn't come with a preinstalled bash shell. To remedy this we will rely
 
 **GitHub**
 
-Head over to GitHub and create a new account—simple enough! If you are a student at a public university, you qualify for the GitHub Education program, which provides you with a free Pro membership. For more information, visit:[GitHub Education](https://education.github.com/discount_requests/application)
+Go to https://github.com/join/ and follow the on-screen instructions to create an account.
+It is a good idea to associate this with your university e-mail (if you have one) as this will entitle you to sign up for the [GitHub Student Developer Pack](https://education.github.com/pack) or [GitHub for teachers](https://education.github.com/teachers) which come with some nice free bonuses.
 
 
 **Git and Git Annex**
@@ -181,7 +181,8 @@ Open a terminal and type `echo $SHELL`.
 
 **GitHub**
 
-Head over to GitHub and create a new account—simple enough! If you are a student at a public university, you qualify for the GitHub Education program, which provides you with a free Pro membership. For more information, visit:[GitHub Education](https://education.github.com/discount_requests/application)
+Go to https://github.com/join/ and follow the on-screen instructions to create an account.
+It is a good idea to associate this with your university e-mail (if you have one) as this will entitle you to sign up for the [GitHub Student Developer Pack](https://education.github.com/pack) or [GitHub for teachers](https://education.github.com/teachers) which come with some nice free bonuses.
 
 **Git and Git-Annex**
 Should also be pre-installed! To verify run the followin command in your terminal
@@ -262,7 +263,8 @@ Newer versions of Mac OS will rely on a differnt standard, i.e. `zsh`, so we mig
 
 **GitHub**
 
-Head over to GitHub and create a new account—simple enough! If you are a student at a public university, you qualify for the GitHub Education program, which provides you with a free Pro membership. For more information, visit:[GitHub Education](https://education.github.com/discount_requests/application)
+Go to https://github.com/join/ and follow the on-screen instructions to create an account.
+It is a good idea to associate this with your university e-mail (if you have one) as this will entitle you to sign up for the [GitHub Student Developer Pack](https://education.github.com/pack) or [GitHub for teachers](https://education.github.com/teachers) which come with some nice free bonuses.
 
 
 **Git and Git-Annex**
@@ -336,23 +338,20 @@ If they're unable to help via Discord, you may be directed to attend one of the 
 
 ## Checking your install
 
-Simply open a new terminal and type `docker run hello-world`.
-   - A brief introductory message should be printed to the screen.
+1. open a new terminal (i.e. start the Ubuntu application if you are on windows)
+2. Input `git --version`
+   - a git version should be displayed
+3. Start your Datalad environment by inputting: `source ~/env/datalad/bin/activate`
+   - the name of your environemnt should appear before your username in your terminal, e.g. 
+   ```
+   (base) Michaels-MacBook-Pro:dm_workshop_setup me$ source ~/env/datalad/bin/activate
+   (datalad) (base) Michaels-MacBook-Pro:dm_workshop_setup me$ 
+   ``
+4. Input `datalad --version`
+   - a datalad version should be displayed
 
-## GitHub account
 
-Go to https://github.com/join/ and follow the on-screen instructions to create an account.
-It is a good idea to associate this with your university e-mail (if you have one) as this will entitle you to sign up for the [GitHub Student Developer Pack](https://education.github.com/pack) or [GitHub for teachers](https://education.github.com/teachers) which come with some nice free bonuses.
 
-## Discord
-
-Go to https://discord.com/ and download and install Discord. Please note, that you can also use Discord through your browser if you don't want to download it.
-To join the workshop server follow this [invite link](https://discord.gg/ehN5haXS).
-
-## Modern web browser
-
-Install Firefox or Chrome (Safari will also work.)
-Microsoft Edge is not modern, despite what Microsoft might try and otherwise tell you.
 
 ### Enter the matrix
 
