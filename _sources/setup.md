@@ -356,7 +356,7 @@ However, please let me know if you have a preferred way of interacting with othe
    ```
    (base) Michaels-MacBook-Pro:dm_workshop_setup me$ source ~/env/datalad/bin/activate
    (datalad) (base) Michaels-MacBook-Pro:dm_workshop_setup me$ 
-   ``
+   ```
 4. Input `datalad --version`
    - a datalad version should be displayed
 
