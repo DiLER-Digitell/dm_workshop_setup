@@ -81,15 +81,20 @@ Windows doesn't come with a preinstalled bash shell. To remedy this we will rely
 
 ![remote connection wsl taskbar options](/static/VSCode_WSL.png)
 
+
+**GitHub**
+
+Head over to GitHub and create a new account—simple enough! If you are a student at a public university, you qualify for the GitHub Education program, which provides you with a free Pro membership. For more information, visit:[GitHub Education](https://education.github.com/discount_requests/application)
+
+
 **Git and Git Annex**
 Unfortunately, Windows also doesn't provide a Git instalation out of the box. There are a dew ways to set your windows system up to work with version control systems, but efficency may suffer, when forcing to make Git work with a general windows installation. 
 
 Good news, though! WSL provides you with a Unix-environment, which most likely already ships with an up to date Git installation. To verify wether this is through for your system open the *Ubuntu application*, aka your 'terminal' or 'command-line-interface'. Type: `git --version` and hit enter. The output should simply be a sensible version number, e.g.
 
-```{code} bash
-(base) Michaels-MacBook-Pro:~ me$ git --version
+git --version
    git version 2.39.2 
-```
+
 
 Should you see no output, an error message or a version number starting with a `1.`, you will have to install or update you Git installation. We will make use of the linux package manager [apt]() for this, Still in the `terminal` type the following and hit enter,
 
@@ -113,7 +118,7 @@ For more information and troubleshooting, you can check the following ressources
 [Setting your commit email addres ](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git)
 
 
-** DataLad**
+**DataLad**
 
 Our friendly all-purpose data managemnt software. Learning Datalad will make your life (professional) much easier, so we highly encourage not only following our workshop,but having a look at the masterpiece that is the [Datalad Handbook](). They also provide a a [OS-specific installation guide](https://handbook.datalad.org/en/latest/intro/installation.html#fom-macosx-pip), but we will be changing this process up a little not only using the python package manager [pip]([venv](https://docs.python.org/3/library/venv.html)) that all of you already have preinstalled with your OS (your Ubuntu app created with WSL in the case of Windows kids), and the provided `enviornment managemnt package` [venv](https://docs.python.org/3/library/venv.html). 
 
@@ -131,6 +136,19 @@ But before we copy and paste the following code block into your terminal, let's 
 *Note:*
 From now on, whenever you want to work with Datalad, activate the virtual environment in your terminal with:
 `source ~/env/datalad/bin/activate`
+
+** GIN.g-node interace
+
+G-Node, or the "German Neuroinformatics Node" interface, provides a GDPR-compliant service for data storage and sharing. It is built on Git and git-annex, allowing easy integration into version-controlled, automated workflows. To begin, you’ll need to set up an account on the [public GIN website](https://gin.g-node.org/). 
+
+If we want to upload files from our local system to GIN and make full use of our setup using Datalad and Git to manage our files, we’ll need to connect these services. This can be done by generating and sharing SSH keys between the services. SSH (Secure Shell Protocol) keys are authentication protocols that allow secure login from a local system to remote servers and services. For example, if you’re working on a local server system, you’ve likely already used SSH.
+
+Admittedly, this is a more complex process that we will not have time to cover in detail during the workshop. However, you can refer to the following resources for guidance on generating an SSH key using the terminal and adding it to your GitHub and GIN repositories:
+
+1. [Generate an SSH Key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+2. [Adding a SSH Key to your GitHub Account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+3. [Adding a SSH Key to your GIN Repository](https://handbook.datalad.org/en/latest/basics/101-139-gin.html#prerequisites)
+
 
 ```
 
@@ -161,6 +179,9 @@ Open a terminal and type `echo $SHELL`.
 1. Go to https://code.visualstudio.com/ and click the download button for either the .deb (Ubuntu, Debian) or the .rpm (Fedora, CentOS) file.
 1. Double-click the downloaded file to install VSCode.
 
+**GitHub**
+
+Head over to GitHub and create a new account—simple enough! If you are a student at a public university, you qualify for the GitHub Education program, which provides you with a free Pro membership. For more information, visit:[GitHub Education](https://education.github.com/discount_requests/application)
 
 **Git and Git-Annex**
 Should also be pre-installed! To verify run the followin command in your terminal
@@ -185,8 +206,7 @@ Additionally, we will want to make use of Git Annex, a version control and data 
 `sudo apt-get install git-annex`
 
 
-
-** DataLad**
+**DataLad**
 
 Our friendly all-purpose data managemnt software. Learning Datalad will make your life (professional) much easier, so we highly encourage not only following our workshop,but having a look at the masterpiece that is the [Datalad Handbook](). They also provide a a [OS-specific installation guide](https://handbook.datalad.org/en/latest/intro/installation.html#fom-macosx-pip), but we will be changing this process up a little not only using the python package manager [pip]([venv](https://docs.python.org/3/library/venv.html)) that all of you already have preinstalled with your OS (WSL in the case of Windows kids), and the provided `enviornment managemnt package` [venv](https://docs.python.org/3/library/venv.html). 
 
@@ -204,6 +224,18 @@ But before we copy and paste the following code block into your terminal, let's 
 *Note:*
 From now on, whenever you want to work with Datalad, activate the virtual environment in your terminal with:
 `source ~/env/datalad/bin/activate`
+
+** GIN.g-node interace
+
+G-Node, or the "German Neuroinformatics Node" interface, provides a GDPR-compliant service for data storage and sharing. It is built on Git and git-annex, allowing easy integration into version-controlled, automated workflows. To begin, you’ll need to set up an account on the [public GIN website](https://gin.g-node.org/). 
+
+If we want to upload files from our local system to GIN and make full use of our setup using Datalad and Git to manage our files, we’ll need to connect these services. This can be done by generating and sharing SSH keys between the services. SSH (Secure Shell Protocol) keys are authentication protocols that allow secure login from a local system to remote servers and services. For example, if you’re working on a local server system, you’ve likely already used SSH.
+
+Admittedly, this is a more complex process that we will not have time to cover in detail during the workshop. However, you can refer to the following resources for guidance on generating an SSH key using the terminal and adding it to your GitHub and GIN repositories:
+
+1. [Generate an SSH Key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+2. [Adding a SSH Key to your GitHub Account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+3. [Adding a SSH Key to your GIN Repository](https://handbook.datalad.org/en/latest/basics/101-139-gin.html#prerequisites)
 
 ```
 
@@ -226,6 +258,12 @@ Newer versions of Mac OS will rely on a differnt standard, i.e. `zsh`, so we mig
 
 1. Go to https://code.visualstudio.com/ and click the download button.
 2. Unzip the downloaded file (e.g., `VSCode-darwin-stable.zip`) and moving the resulting `Visual Studio Code` file to your Applications directory.
+
+
+**GitHub**
+
+Head over to GitHub and create a new account—simple enough! If you are a student at a public university, you qualify for the GitHub Education program, which provides you with a free Pro membership. For more information, visit:[GitHub Education](https://education.github.com/discount_requests/application)
+
 
 **Git and Git-Annex**
 Unlike other Unix-systems MacOs sadly doesn't usually provide a Git installation straight out of the box. So we'll first have to install a package manager that allows us the installation of programms via the terminal. 
@@ -256,7 +294,7 @@ $ git config --global user.email
 Should you want to change or override this information, simply run the above commands again, providing your corrected email.
 
 
-** DataLad**
+**DataLad**
 
 Our friendly all-purpose data managemnt software. Learning Datalad will make your life (professional) much easier, so we highly encourage not only following our workshop,but having a look at the masterpiece that is the [Datalad Handbook](). They also provide a a [OS-specific installation guide](https://handbook.datalad.org/en/latest/intro/installation.html#fom-macosx-pip), but we will be changing this process up a little not only using the python package manager [pip]([venv](https://docs.python.org/3/library/venv.html)) that all of you already have preinstalled with your OS (WSL in the case of Windows kids), and the provided `enviornment managemnt package` [venv](https://docs.python.org/3/library/venv.html). 
 
@@ -274,6 +312,20 @@ But before we copy and paste the following code block into your terminal, let's 
 *Note:*
 From now on, whenever you want to work with Datalad, activate the virtual environment in your terminal with:
 `source ~/env/datalad/bin/activate`
+
+** GIN.g-node interace
+
+G-Node, or the "German Neuroinformatics Node" interface, provides a GDPR-compliant service for data storage and sharing. It is built on Git and git-annex, allowing easy integration into version-controlled, automated workflows. To begin, you’ll need to set up an account on the [public GIN website](https://gin.g-node.org/). 
+
+If we want to upload files from our local system to GIN and make full use of our setup using Datalad and Git to manage our files, we’ll need to connect these services. This can be done by generating and sharing SSH keys between the services. SSH (Secure Shell Protocol) keys are authentication protocols that allow secure login from a local system to remote servers and services. For example, if you’re working on a local server system, you’ve likely already used SSH.
+
+Admittedly, this is a more complex process that we will not have time to cover in detail during the workshop. However, you can refer to the following resources for guidance on generating an SSH key using the terminal and adding it to your GitHub and GIN repositories:
+
+1. [Generate an SSH Key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+2. [Adding a SSH Key to your GitHub Account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+3. [Adding a SSH Key to your GIN Repository](https://handbook.datalad.org/en/latest/basics/101-139-gin.html#prerequisites)
+
+
 ```
 
 ````
