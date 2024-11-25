@@ -94,6 +94,9 @@ Windows doesn't come with a preinstalled bash shell. To remedy this we will rely
 Go to https://github.com/join/ and follow the on-screen instructions to create an account.
 It is a good idea to associate this with your university e-mail (if you have one) as this will entitle you to sign up for the [GitHub Student Developer Pack](https://education.github.com/pack) or [GitHub for teachers](https://education.github.com/teachers) which come with some nice free bonuses.
 
+<br>
+
+<br>
 
 **Git and Git Annex**
 Unfortunately, Windows also doesn't provide a Git instalation out of the box. There are a dew ways to set your windows system up to work with version control systems, but efficency may suffer, when forcing to make Git work with a general windows installation. 
@@ -207,6 +210,11 @@ Open a terminal and type `echo $SHELL`.
 
 Go to https://github.com/join/ and follow the on-screen instructions to create an account.
 It is a good idea to associate this with your university e-mail (if you have one) as this will entitle you to sign up for the [GitHub Student Developer Pack](https://education.github.com/pack) or [GitHub for teachers](https://education.github.com/teachers) which come with some nice free bonuses.
+
+<br>
+
+<br>
+
 
 **Git and Git-Annex**
 Should also be pre-installed! To verify run the followin command in your terminal
