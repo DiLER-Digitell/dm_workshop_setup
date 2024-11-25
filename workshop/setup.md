@@ -137,7 +137,7 @@ But before we copy and paste the following code block into your terminal, let's 
 From now on, whenever you want to work with Datalad, activate the virtual environment in your terminal with:
 `source ~/env/datalad/bin/activate`
 
-** GIN.g-node interace
+**GIN.g-node interface**
 
 G-Node, or the "German Neuroinformatics Node" interface, provides a GDPR-compliant service for data storage and sharing. It is built on Git and git-annex, allowing easy integration into version-controlled, automated workflows. To begin, you’ll need to set up an account on the [public GIN website](https://gin.g-node.org/). 
 
@@ -226,7 +226,7 @@ But before we copy and paste the following code block into your terminal, let's 
 From now on, whenever you want to work with Datalad, activate the virtual environment in your terminal with:
 `source ~/env/datalad/bin/activate`
 
-** GIN.g-node interace
+**GIN.g-node interface**
 
 G-Node, or the "German Neuroinformatics Node" interface, provides a GDPR-compliant service for data storage and sharing. It is built on Git and git-annex, allowing easy integration into version-controlled, automated workflows. To begin, you’ll need to set up an account on the [public GIN website](https://gin.g-node.org/). 
 
@@ -315,7 +315,7 @@ But before we copy and paste the following code block into your terminal, let's 
 From now on, whenever you want to work with Datalad, activate the virtual environment in your terminal with:
 `source ~/env/datalad/bin/activate`
 
-** GIN.g-node interace
+**GIN.g-node interface**
 
 G-Node, or the "German Neuroinformatics Node" interface, provides a GDPR-compliant service for data storage and sharing. It is built on Git and git-annex, allowing easy integration into version-controlled, automated workflows. To begin, you’ll need to set up an account on the [public GIN website](https://gin.g-node.org/). 
 
@@ -332,9 +332,19 @@ Admittedly, this is a more complex process that we will not have time to cover i
 
 ````
 
-**Note**: If the instructions aren't working and you have spent more than 15-20 minutes troubleshooting on your own, reach out on the #help-installation channel on the Discord server (info below) with the exact problems you're having.
-One of the instructors will try and get back to you quickly to help resolve the situation.
-If they're unable to help via Discord, you may be directed to attend one of the installation office hours.
+**Note**: If the instructions aren't working and you have spent more than 15-20 minutes troubleshooting on your own, reach out to the instructors or create a pull request for the assoicated [GitHub Repo](https://github.com/DiLER-Digitell/dm_workshop_setup).
+
+[Michael Ernst](https://github.com/M-earnest)
+
+- Office hours: upon request
+- E-mail: `ernst@psych.uni-frankfurt.de`
+- preferred mode of contact: via  e-mail
+
+```{admonition} How do we address one another?
+:class: dropdown
+He/Him. When contacting me, please refrain from using honoraries and formal language, "Michael" or "you" is fine as long as the content is respectful, fair, and constructive (I aim for the same when I reply).
+However, please let me know if you have a preferred way of interacting with other folks, including how you would like to be addressed, your pronouns, and the level of formality.
+```
 
 ## Checking your install
 
