@@ -695,24 +695,36 @@ $ git config –global user.email</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">datalad</span></code> now installs the datalad package into your isolated virtual environment using the Python package manager, pip.</p></li>
 <li><p>same thing, just for the datalad-container extension, which allows you to manage and run automated pipelines (Docker or singularity container) on your data</p></li>
 </ol>
+</div>
+</div>
 <p>python -m venv –system-site-packages ~/env/datalad &amp;&amp; source ~/env/datalad/bin/activate;
 python -m pip install datalad
 python -m pip install datalad-container</p>
-<p><em>Note:</em>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+*Note:*
 From now on, whenever you want to work with Datalad, activate the virtual environment in your terminal with:
-<code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">~/env/datalad/bin/activate</span></code></p>
-<br>
-<br>
-<p><strong>GIN.g-node interface</strong></p>
-<p>G-Node, or the “German Neuroinformatics Node” interface, provides a GDPR-compliant service for data storage and sharing. It is built on Git and git-annex, allowing easy integration into version-controlled, automated workflows. To begin, you’ll need to set up an account on the <a class="reference external" href="https://gin.g-node.org/">public GIN website</a>.</p>
-<p>If we want to upload files from our local system to GIN and make full use of our setup using Datalad and Git to manage our files, we’ll need to connect these services. This can be done by generating and sharing SSH keys between the services. SSH (Secure Shell Protocol) keys are authentication protocols that allow secure login from a local system to remote servers and services. For example, if you’re working on a local server system, you’ve likely already used SSH.</p>
-<p>Admittedly, this is a more complex process that we will not have time to cover in detail during the workshop. However, you can refer to the following resources for guidance on generating an SSH key using the terminal and adding it to your GitHub and GIN repositories:</p>
-<ol class="arabic simple">
-<li><p><a class="reference external" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">Generate an SSH Key</a></p></li>
-<li><p><a class="reference external" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">Adding a SSH Key to your GitHub Account</a></p></li>
-<li><p><a class="reference external" href="https://handbook.datalad.org/en/latest/basics/101-139-gin.html#prerequisites">Adding a SSH Key to your GIN Repository</a></p></li>
-</ol>
-</div>
+`source ~/env/datalad/bin/activate`
+
+&lt;br&gt;
+
+&lt;br&gt;
+
+**GIN.g-node interface**
+
+G-Node, or the &quot;German Neuroinformatics Node&quot; interface, provides a GDPR-compliant service for data storage and sharing. It is built on Git and git-annex, allowing easy integration into version-controlled, automated workflows. To begin, you’ll need to set up an account on the [public GIN website](https://gin.g-node.org/). 
+
+If we want to upload files from our local system to GIN and make full use of our setup using Datalad and Git to manage our files, we’ll need to connect these services. This can be done by generating and sharing SSH keys between the services. SSH (Secure Shell Protocol) keys are authentication protocols that allow secure login from a local system to remote servers and services. For example, if you’re working on a local server system, you’ve likely already used SSH.
+
+Admittedly, this is a more complex process that we will not have time to cover in detail during the workshop. However, you can refer to the following resources for guidance on generating an SSH key using the terminal and adding it to your GitHub and GIN repositories:
+
+1. [Generate an SSH Key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+2. [Adding a SSH Key to your GitHub Account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+3. [Adding a SSH Key to your GIN Repository](https://handbook.datalad.org/en/latest/basics/101-139-gin.html#prerequisites)
+
+
+```
+
+</pre></div>
 </div>
 <p><strong>Note</strong>: If the instructions aren’t working and you have spent more than 15-20 minutes troubleshooting on your own, reach out to the instructors or create a pull request for the assoicated <a class="reference external" href="https://github.com/DiLER-Digitell/dm_workshop_setup">GitHub Repo</a>.</p>
 <p><a class="reference external" href="https://github.com/M-earnest">Michael Ernst</a></p>
