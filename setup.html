@@ -410,18 +410,19 @@
 <section id="required-software">
 <h2>Required software<a class="headerlink" href="#required-software" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>A command-line shell: Bash</p></li>
+<li><p>a command-line shell: Bash</p></li>
 <li><p>Git and Git-Annex</p></li>
 <li><p>a GitHub Account</p></li>
-<li><p>A GIN-Account</p></li>
+<li><p>a GIN-Account</p></li>
 <li><p>DataLad</p></li>
 </ul>
 <p>additionally, you’ll generally should have:</p>
 <ul class="simple">
 <li><p>An IDE or text editor: e.g. VSCode (recommended)</p></li>
-<li><p>A modern browser (Install Firefox or Chrome; Safari will also work.)</p></li>
+<li><p>a modern browser (Install Firefox or Chrome; Safari will also work.)</p></li>
+<li><p>Docker (a containerization software that enables you to run automated workflows; required for one of our demos)
+Mac and Linux distributions automatically provide a command line shell, simply search for <code class="docutils literal notranslate"><span class="pre">terminal</span></code> and you should be good to go. Windows users will have to complete a few additional steps, see the OS-specific installation instructions down below.</p></li>
 </ul>
-<p>Mac and Linux distributions automatically provide a command line shell, simply search for <code class="docutils literal notranslate"><span class="pre">terminal</span></code> and you should be good to go. Windows users will have to complete a few additional steps, see the OS-specific installation instructions down below.</p>
 </section>
 <section id="general-things">
 <h2>General things<a class="headerlink" href="#general-things" title="Link to this heading">#</a></h2>
@@ -459,7 +460,7 @@ Select <code class="docutils literal notranslate"><span class="pre">Yes</span></
 </div>
 </li>
 <li><p>Press <code class="docutils literal notranslate"><span class="pre">Enter</span></code> again when prompted to reboot your computer.</p></li>
-<li><p>You’ll find a new apllication named “Ubuntu”, this is your new command line tool. Right-click and run this app as administrator.</p>
+<li><p>You’ll find a new application named “Ubuntu”, this is your new command line tool. Right-click and run this app as administrator.</p>
 <ul class="simple">
 <li><p>the first launch of the new Linux distribution may take some time as files need to be decompressed and stored</p></li>
 </ul>
@@ -468,10 +469,10 @@ Select <code class="docutils literal notranslate"><span class="pre">Yes</span></
 <ul class="simple">
 <li><p>to make use of the command line you’ll have to bascially create an deafult user account, which gives you the ability to run sudo (Super User Do) administrative commands</p></li>
 <li><p>the account name should be simple and contain no extra characters or spaces, e.g. your initials or first name will usually do</p></li>
-<li><p>`Note: When entering your password nothing will appear on the screen (blind typing), but you’re input will still be registeres. Simply type a password and hit enter.</p></li>
+<li><p>`Note: When entering your password nothing will appear on the screen (blind typing), but you’re input will still be registered. Simply type a password and hit enter.</p></li>
 </ul>
 </li>
-<li><p>Make sure that Ubuntu is up-to-date by entering the following and hitting enter: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">update</span> <span class="pre">&amp;&amp;</span> <span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">upgrade</span></code></p>
+<li><p>Make sure that your packages are up-to-date by entering the following and hitting enter: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">update</span> <span class="pre">&amp;&amp;</span> <span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">upgrade</span></code></p>
 <ul class="simple">
 <li><p>here you’ll be asked for the password you set in the previous step</p></li>
 </ul>
@@ -503,10 +504,9 @@ It is a good idea to associate this with your university e-mail (if you have one
 <br>
 <br>
 <p><strong>Git and Git Annex</strong>
-Unfortunately, Windows also doesn’t provide a Git instalation out of the box. There are a dew ways to set your windows system up to work with version control systems, but efficency may suffer, when forcing to make Git work with a general windows installation.</p>
-<p>Good news, though! WSL provides you with a Unix-environment, which most likely already ships with an up to date Git installation. To verify wether this is through for your system open the <em>Ubuntu application</em>, aka your ‘terminal’ or ‘command-line-interface’. Type: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">--version</span></code> and hit enter. The output should simply be a sensible version number, e.g.</p>
-<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">--version</span></code>
-<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">version</span> <span class="pre">2.39.2</span> </code></p>
+Unfortunately, Windows does not provide a Git installation out of the box. There are a few ways to set up your Windows system to work with version control systems, but efficiency may suffer when trying to force Git to work with a standard Windows installation.</p>
+<p>Good news, though! WSL provides you with a Unix environment, which most likely already includes an up-to-date Git installation. To verify whether this is true for your system, open the Ubuntu application (your ‘terminal’ or ‘command-line interface’). Type: git –version and press Enter. The output should display a sensible version number, e.g.</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">version</span> <span class="pre">2.39.2</span> </code></p>
 <p>Should you see no output, an error message or a version number starting with a <code class="docutils literal notranslate"><span class="pre">1.</span></code>, you will have to install or update you Git installation. We will make use of the linux package manager <a class="reference internal" href="#"><span class="xref myst">apt</span></a> for this, Still in the <code class="docutils literal notranslate"><span class="pre">terminal</span></code> type the following and hit enter,</p>
 <p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">git</span></code></p>
 <p>After the installation process is completed, you will want to connect your local Git version to the online version-control system GitHub, to make use of the full functionalilty of Git. For this, first create an account on <a class="reference internal" href="#"><span class="xref myst">GitHub</span></a> and type the following in your terminal, replacing the highlighted text with the information you provided on GitHub:</p>
@@ -514,6 +514,7 @@ Unfortunately, Windows also doesn’t provide a Git instalation out of the box. 
 <p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">user.email</span> <span class="pre">&lt;youremail&#64;domain.com&gt;</span></code></p>
 <p>Verify that your data is correct by running the same command again, but omitting the email-input:</p>
 <p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">user.email</span></code></p>
+<p>Which will return the email you have registered.</p>
 <p>Should you want to change or override this information, simply run the above commands again, providing your corrected email.</p>
 <p>Additionally, we will want to make use of Git Annex, a version control and data managment system. Input the following into your terminal:</p>
 <p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">git-annex</span></code></p>
@@ -551,6 +552,25 @@ From now on, whenever you want to work with Datalad, activate the virtual enviro
 <li><p><a class="reference external" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">Adding a SSH Key to your GitHub Account</a></p></li>
 <li><p><a class="reference external" href="https://handbook.datalad.org/en/latest/basics/101-139-gin.html#prerequisites">Adding a SSH Key to your GIN Repository</a></p></li>
 </ol>
+<br>
+<br>
+<p><strong>Docker</strong></p>
+<p>Unfortunately, getting Docker to work on Windows is a tad more complicated.</p>
+<ol class="arabic simple">
+<li><p>Download the installer from this <a class="reference external" href="https://www.docker.com/products/docker-desktop/">website</a>.</p></li>
+<li><p>Double-click Docker Desktop Installer.exe to run the installer. By default, Docker Desktop is installed at C:\Program Files\Docker\Docker.</p></li>
+<li><p>When prompted, ensure that “Use WSL 2” instead of Hyper-V option on the Configuration page is selected.</p></li>
+<li><p>If your system only supports one of the two options, you will not be able to select which backend to use.</p></li>
+<li><p>Follow the instructions on the installation wizard to authorize the installer and proceed with the install.</p></li>
+<li><p>When the installation is successful, select Close to complete the installation process.</p></li>
+<li><p>Open Docker Dektop, agree to the the terms of service and login using your Dockerhub user credentials. Now, the Docker engine should start (if starting of the Docker engine takes more than 5 minutes, restart your computer.</p></li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">If</span> <span class="pre">your</span> <span class="pre">admin</span> <span class="pre">account</span> <span class="pre">is</span> <span class="pre">different</span> <span class="pre">to</span> <span class="pre">your</span> <span class="pre">user</span> <span class="pre">account,</span> <span class="pre">you</span> <span class="pre">must</span> <span class="pre">add</span> <span class="pre">the</span> <span class="pre">user</span> <span class="pre">to</span> <span class="pre">the</span> <span class="pre">docker-users</span> <span class="pre">group:</span></code></p>
+<ol class="arabic simple" start="8">
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">Computer</span> <span class="pre">Management</span></code> as <code class="docutils literal notranslate"><span class="pre">administrator</span></code>.</p></li>
+<li><p>Navigate to Local Users and Groups &gt; Groups &gt; docker-users.</p></li>
+<li><p>Right-click to add the user to the group. 4)Sign out and sign back in for the changes to take effect.</p></li>
+</ol>
 </div>
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-1">
@@ -566,7 +586,6 @@ If not go through these following steps:</p>
 <li><p>To check which shell you’re using open a terminal and type <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$SHELL</span></code>.</p></li>
 </ol>
 <ul class="simple">
-<li><p>If it reads <code class="docutils literal notranslate"><span class="pre">/bin/bash</span></code> then you are all set!</p></li>
 <li><p>If it read `/bin/zsh we will need to make the following adjustments</p></li>
 </ul>
 <ol class="arabic simple" start="2">
@@ -636,6 +655,29 @@ From now on, whenever you want to work with Datalad, activate the virtual enviro
 <li><p><a class="reference external" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">Generate an SSH Key</a></p></li>
 <li><p><a class="reference external" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">Adding a SSH Key to your GitHub Account</a></p></li>
 <li><p><a class="reference external" href="https://handbook.datalad.org/en/latest/basics/101-139-gin.html#prerequisites">Adding a SSH Key to your GIN Repository</a></p></li>
+</ol>
+<br>
+<br>
+<p><strong>Docker</strong></p>
+<p>Installing Docker Desktop is the recommended approach for all systems. You’ll need administraror (sudo) rights to follow this process.</p>
+<ol class="arabic simple">
+<li><p>Install Docker Desktop by following the official <a class="reference external" href="https://docs.docker.com/desktop/install/linux-install/">installation guide</a> for your specific distro.</p>
+<ol class="arabic simple">
+<li><p>Set up Docker’s package repository. See <code class="docutils literal notranslate"><span class="pre">step</span> <span class="pre">one</span></code> of <a class="reference external" href="https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository">Install using the apt repository</a>.</p></li>
+<li><p>Download latest package</p></li>
+<li><p>Open a terminal and install the package with apt following the instructions on the website</p></li>
+</ol>
+</li>
+<li><p>To Launch Docker Desktop run:
+`systemctl –user start docker-desktop``</p>
+<ul class="simple">
+<li><p>alternatively to enable Docker Desktop to start at sign-in run:
+<code class="docutils literal notranslate"><span class="pre">systemctl</span> <span class="pre">--user</span> <span class="pre">enable</span> <span class="pre">docker-desktop</span></code></p></li>
+</ul>
+</li>
+<li><p>Close and Re-open a new terminal and type
+<code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">hello-world</span></code>.
+A brief introductory message should be printed to the screen.</p></li>
 </ol>
 </div>
 <input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
@@ -721,6 +763,20 @@ From now on, whenever you want to work with Datalad, activate the virtual enviro
 <li><p><a class="reference external" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">Adding a SSH Key to your GitHub Account</a></p></li>
 <li><p><a class="reference external" href="https://handbook.datalad.org/en/latest/basics/101-139-gin.html#prerequisites">Adding a SSH Key to your GIN Repository</a></p></li>
 </ol>
+<br>
+<br>
+<p><strong>Docker</strong></p>
+<ol class="arabic simple">
+<li><p>Go to <a class="reference external" href="https://hub.docker.com/editions/community/docker-ce-desktop-mac/">https://hub.docker.com/editions/community/docker-ce-desktop-mac/</a> and press “Get Docker”.</p></li>
+<li><p>Open the “Docker.dmg” file that is downloaded and drag and drop the icon to the Applications folder</p></li>
+<li><p>Open the Docker application and enter your password.
+An icon will appear in the status bar in the top-left of the screen.
+Wait until it reads “Docker Desktop is now up and running!”</p></li>
+<li><p>Open a new terminal and type <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">hello-world</span></code>.
+A brief introductory message should be printed to the screen.</p></li>
+</ol>
+<p>(The above step-by-step Docker instructions are distilled from <a class="reference external" href="https://docs.docker.com/docker-for-mac/install/">here</a>.
+If you have questions during the installation procedure please check that link for potential answers!)</p>
 </div>
 </div>
 <p><strong>Note</strong>: If the instructions aren’t working and you have spent more than 15-20 minutes troubleshooting on your own, reach out to the instructors or create a pull request for the assoicated <a class="reference external" href="https://github.com/DiLER-Digitell/dm_workshop_setup">GitHub Repo</a>.</p>
