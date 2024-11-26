@@ -7,16 +7,16 @@ We'll come to actual installation instructions shortly, but there are a few othe
 
 ## Required software
 
-- A command-line shell: Bash
+- a command-line shell: Bash
 - Git and Git-Annex
 - a GitHub Account
-- A GIN-Account
+- a GIN-Account
 - DataLad
 
 additionally, you'll generally should have:
 - An IDE or text editor: e.g. VSCode (recommended)
-- A modern browser (Install Firefox or Chrome; Safari will also work.)
-
+- a modern browser (Install Firefox or Chrome; Safari will also work.)
+- Docker (a containerization software that enables you to run automated workflows; required for one of our demos)
 Mac and Linux distributions automatically provide a command line shell, simply search for `terminal` and you should be good to go. Windows users will have to complete a few additional steps, see the OS-specific installation instructions down below.
 
 ## General things
@@ -53,13 +53,13 @@ Windows doesn't come with a preinstalled bash shell. To remedy this we will rely
        wsl --install
 
 3. Press `Enter` again when prompted to reboot your computer.
-4. You'll find a new apllication named "Ubuntu", this is your new command line tool. Right-click and run this app as administrator.
+4. You'll find a new application named "Ubuntu", this is your new command line tool. Right-click and run this app as administrator.
    - the first launch of the new Linux distribution may take some time as files need to be decompressed and stored
 4. Upon opening the apllication you will be prompted to set up your Linux username and password
    - to make use of the command line you'll have to bascially create an deafult user account, which gives you the ability to run sudo (Super User Do) administrative commands
    - the account name should be simple and contain no extra characters or spaces, e.g. your initials or first name will usually do
-   - `Note: When entering your password nothing will appear on the screen (blind typing), but you're input will still be registeres. Simply type a password and hit enter.
-5. Make sure that Ubuntu is up-to-date by entering the following and hitting enter: `sudo apt update && sudo apt upgrade`
+   - `Note: When entering your password nothing will appear on the screen (blind typing), but you're input will still be registered. Simply type a password and hit enter.
+5. Make sure that your packages are up-to-date by entering the following and hitting enter: `sudo apt update && sudo apt upgrade`
    - here you'll be asked for the password you set in the previous step
 
 *From this point on whenever the instructions specify to "open a terminal" please assume you are supposed to open the Ubuntu application.*
@@ -99,12 +99,11 @@ It is a good idea to associate this with your university e-mail (if you have one
 <br>
 
 **Git and Git Annex**
-Unfortunately, Windows also doesn't provide a Git instalation out of the box. There are a dew ways to set your windows system up to work with version control systems, but efficency may suffer, when forcing to make Git work with a general windows installation. 
+Unfortunately, Windows does not provide a Git installation out of the box. There are a few ways to set up your Windows system to work with version control systems, but efficiency may suffer when trying to force Git to work with a standard Windows installation.
 
-Good news, though! WSL provides you with a Unix-environment, which most likely already ships with an up to date Git installation. To verify wether this is through for your system open the *Ubuntu application*, aka your 'terminal' or 'command-line-interface'. Type: `git --version` and hit enter. The output should simply be a sensible version number, e.g.
+Good news, though! WSL provides you with a Unix environment, which most likely already includes an up-to-date Git installation. To verify whether this is true for your system, open the Ubuntu application (your 'terminal' or 'command-line interface'). Type: git --version and press Enter. The output should display a sensible version number, e.g.
 
-`git --version`
-   `git version 2.39.2 `
+`git version 2.39.2 `
 
 
 Should you see no output, an error message or a version number starting with a `1.`, you will have to install or update you Git installation. We will make use of the linux package manager [apt]() for this, Still in the `terminal` type the following and hit enter,
@@ -121,6 +120,7 @@ Verify that your data is correct by running the same command again, but omitting
 
 `git config --global user.email`
 
+Which will return the email you have registered.
 
 Should you want to change or override this information, simply run the above commands again, providing your corrected email.
 
@@ -173,6 +173,28 @@ Admittedly, this is a more complex process that we will not have time to cover i
 3. [Adding a SSH Key to your GIN Repository](https://handbook.datalad.org/en/latest/basics/101-139-gin.html#prerequisites)
 
 
+<br>
+
+<br>
+
+**Docker**
+
+Unfortunately, getting Docker to work on Windows is a tad more complicated. 
+
+   1. Download the installer from this [website](https://www.docker.com/products/docker-desktop/). 
+   2. Double-click Docker Desktop Installer.exe to run the installer. By default, Docker Desktop is installed at C:\Program Files\Docker\Docker. 
+   3. When prompted, ensure that "Use WSL 2" instead of Hyper-V option on the Configuration page is selected. 
+   4. If your system only supports one of the two options, you will not be able to select which backend to use. 
+   5. Follow the instructions on the installation wizard to authorize the installer and proceed with the install. 
+   6. When the installation is successful, select Close to complete the installation process. 
+   7. Open Docker Dektop, agree to the the terms of service and login using your Dockerhub user credentials. Now, the Docker engine should start (if starting of the Docker engine takes more than 5 minutes, restart your computer.
+
+`If your admin account is different to your user account, you must add the user to the docker-users group:`
+
+   8. Run `Computer Management` as `administrator`. 
+   9. Navigate to Local Users and Groups > Groups > docker-users. 
+   10. Right-click to add the user to the group. 4)Sign out and sign back in for the changes to take effect.
+
 ```
 
 ```{tab-item} Linux
@@ -188,7 +210,6 @@ Open a terminal and type `echo $SHELL`.
    If not go through these following steps:
 
    1. To check which shell you're using open a terminal and type `echo $SHELL`.
-   - If it reads `/bin/bash` then you are all set!
    - If it read `/bin/zsh we will need to make the following adjustments
    2. Type `cat /etc/shells` and hit enter
       - under the list of accaeptable shells you should find `/bin/bash`, note down this path (in most cases it should just read /bin/bash)
@@ -286,6 +307,31 @@ Admittedly, this is a more complex process that we will not have time to cover i
 1. [Generate an SSH Key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 2. [Adding a SSH Key to your GitHub Account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 3. [Adding a SSH Key to your GIN Repository](https://handbook.datalad.org/en/latest/basics/101-139-gin.html#prerequisites)
+
+
+<br>
+
+<br>
+
+**Docker**
+
+Installing Docker Desktop is the recommended approach for all systems. You'll need administraror (sudo) rights to follow this process.
+
+1. Install Docker Desktop by following the official [installation guide](https://docs.docker.com/desktop/install/linux-install/) for your specific distro.
+
+   1. Set up Docker's package repository. See `step one` of [Install using the apt repository](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository).
+   2. Download latest package
+   3. Open a terminal and install the package with apt following the instructions on the website
+
+2. To Launch Docker Desktop run:
+      `systemctl --user start docker-desktop``
+
+   - alternatively to enable Docker Desktop to start at sign-in run:
+      `systemctl --user enable docker-desktop`
+
+3. Close and Re-open a new terminal and type 
+   `docker run hello-world`.
+   A brief introductory message should be printed to the screen.
 
 ```
 
@@ -398,6 +444,23 @@ Admittedly, this is a more complex process that we will not have time to cover i
 2. [Adding a SSH Key to your GitHub Account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 3. [Adding a SSH Key to your GIN Repository](https://handbook.datalad.org/en/latest/basics/101-139-gin.html#prerequisites)
 
+
+<br>
+
+<br>
+
+**Docker**
+
+1. Go to https://hub.docker.com/editions/community/docker-ce-desktop-mac/ and press “Get Docker”.
+2. Open the “Docker.dmg” file that is downloaded and drag and drop the icon to the Applications folder
+3. Open the Docker application and enter your password.
+   An icon will appear in the status bar in the top-left of the screen.
+   Wait until it reads “Docker Desktop is now up and running!”
+4. Open a new terminal and type `docker run hello-world`.
+   A brief introductory message should be printed to the screen.
+
+(The above step-by-step Docker instructions are distilled from [here](https://docs.docker.com/docker-for-mac/install/).
+If you have questions during the installation procedure please check that link for potential answers!)
 
 ```
 
