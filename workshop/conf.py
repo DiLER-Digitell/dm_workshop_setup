@@ -16,8 +16,8 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'docker_workshop'
-copyright = '2024, Aaron Reer, Michael Ernst'
+project = 'Data_managemnt_workshop'
+copyright = '2024, Aaron Reer, Michael Ernst, Jannika Hollmann'
 author = 'Aaron Reer, Michael Ernst'
 
 master_doc = "index"
